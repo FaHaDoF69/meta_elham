@@ -1,0 +1,19 @@
+name: meta_elham_flutter
+description: "Meta Elham is an interactive educational platform for children with autism. The app uses AI-driven features to enhance personalized learning experiences, incorporating interactive games, video tutorials, and initial AI-based assessments to support both children and educators."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
