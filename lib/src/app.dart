@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'features/auth/screens/login_screen.dart';
-import 'features/onboarding/screens/splash_screen.dart';
+import 'features/auth/screens/signup_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,10 +11,20 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Meta Elham App',
+      // Set the locale to Arabic
+      locale: Locale('ar'),
+      // Forces RTL layout
+      builder: (context, child) {
+        return Directionality(
+          textDirection: TextDirection.rtl, // Force RTL
+          child: child!,
+        );
+      },
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(), // Initial route
+        '/': (context) => LoginScreen(), // Initial route
         '/login': (context) => LoginScreen(),
+        '/signup': (context) => SignUpScreen(),
       },
     );
   }
