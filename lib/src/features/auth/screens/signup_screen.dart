@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meta_elham_flutter/src/features/shared/widgets/custom_button_widget.dart';
+import 'package:meta_elham_flutter/src/features/shared/widgets/custom_text_field.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -8,31 +10,17 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
+          /*
+          *
+          * Background Image
+          *
+          * */
           Positioned.fill(
             child: Image.asset(
               'assets/images/background/bg_green.png',
               fit: BoxFit.cover, // Make sure the image covers the entire screen
             ),
           ),
-
-          /*
-          *
-          * Puzzle pattern
-          *
-          * */
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   right: 0,
-          //   child: Image.asset(
-          //     'assets/images/background/pattern_puzzle.png',
-          //     // Ensure it covers the entire width
-          //     fit: BoxFit.cover,
-          //     // Full width
-          //     width: MediaQuery.of(context).size.width,
-          //   ),
-          // ),
 
           /*
           *
@@ -69,9 +57,18 @@ class SignUpScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      buildTextField("الاسم الأول"),
+                      // First name field
+                      const CustomTextFieldWidget(
+                        label: 'الاسم الأول',
+                      ),
                       const SizedBox(height: 10),
-                      buildTextField("الاسم الأخير"),
+
+                      // Last name field
+                      const CustomTextFieldWidget(
+                        label: "الاسم الأخير",
+                      ),
+
+                      // Spacer
                       const SizedBox(height: 10),
 
                       // Guardian type
@@ -100,16 +97,29 @@ class SignUpScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+
+                      // Spacer
                       const SizedBox(height: 10),
 
-                      buildTextField("عدد التابعين"),
+                      // Children count
+                      const CustomTextFieldWidget(label: "عدد التابعين"),
+
+                      // Spacer
                       const SizedBox(height: 10),
-                      buildTextField("رقم الجوال"),
+
+                      // Phone number field
+                      const CustomTextFieldWidget(label: "رقم الجوال"),
+
+                      // Spacer
                       const SizedBox(height: 10),
-                      buildTextField("البريد الإلكتروني"),
+
+                      // Email field
+                      const CustomTextFieldWidget(label: "البريد الإلكتروني"),
                     ],
                   ),
                 ),
+
+                // Spacer
                 const SizedBox(height: 20),
 
                 // Terms and Conditions
@@ -128,42 +138,32 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                // Spacer
                 const SizedBox(height: 20),
 
                 // Register Button with Gradient
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6FE6A5), Color(0xFF277591)],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        "تسجيل الدخول",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                // SizedBox(height: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: CustomButtonWidget(
+                      buttonText: "تسجيل الدخول",
+                      // TODO change gradient colors and text color according
+                      gradientColors: const [
+                        Color(0xFF6FE6A5),
+                        Color(0xFF277591)
+                      ],
+                      textColor: Colors.white,
+                      onPressed: () {
+                        // Navigate to otp screen
+                        Navigator.pushNamed(context, '/otp');
+                      },
+                    )),
+
+                /*
+                *
+                * Puzzle pattern
+                *
+                * */
                 Image.asset(
                   'assets/images/background/pattern_puzzle.png',
                   // Ensure it covers the entire width
@@ -176,27 +176,6 @@ class SignUpScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  // Helper method for text fields
-  Widget buildTextField(String label) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: const TextStyle(fontSize: 16)),
-        const SizedBox(height: 5),
-        TextField(
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
