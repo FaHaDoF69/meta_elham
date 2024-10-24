@@ -24,5 +24,6 @@ flutter:
   assets:
     - .env
     - assets/images/background/
-    - assets/images/
     - assets/images/logo/
+    - assets/images/avatars/
+    - assets/images/
