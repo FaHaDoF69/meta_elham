@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta_elham_flutter/src/features/auth/screens/otp_screen.dart';
+import 'package:meta_elham_flutter/src/features/parent/screens/parent_dashboard_screen.dart';
 
 import 'features/auth/screens/login_screen.dart';
 import 'features/auth/screens/signup_screen.dart';
@@ -27,6 +28,7 @@ class App extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignUpScreen(),
         '/otp': (context) => OtpScreen(),
+        '/parent_dashboard': (context) => ParentDashboardScreen(),
       },
     );
   }
