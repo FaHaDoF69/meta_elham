@@ -14,20 +14,21 @@ class ParentAppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         // TODO colors
 
+        // Get the colors from theme
         image: DecorationImage(
-          image: AssetImage('assets/images/background/bg_appbar.png'),
+          image: AssetImage('assets/images/background/bg_green_dark.png'),
           // Replace with your image path
-          fit: BoxFit.cover, // Ensures the image covers the entire AppBar
+          fit: BoxFit.fitWidth, // Ensures the image covers the entire AppBar
         ),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(25),
           bottomRight: Radius.circular(25),
         ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -46,14 +47,14 @@ class ParentAppBarWidget extends StatelessWidget {
           ),
 
           // Spacer
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
 
           // User name
           Text(
             name, // Use the provided name
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -61,7 +62,7 @@ class ParentAppBarWidget extends StatelessWidget {
           ),
 
           // Spacer
-          Spacer(),
+          const Spacer(),
 
           /*
           *
@@ -71,7 +72,7 @@ class ParentAppBarWidget extends StatelessWidget {
           IconButton(
             icon: Stack(
               children: [
-                Icon(
+                const Icon(
                   Icons.notifications,
                   size: 30,
                   color: Colors.white,
@@ -80,12 +81,12 @@ class ParentAppBarWidget extends StatelessWidget {
                   right: 0,
                   top: 0,
                   child: Container(
-                    padding: EdgeInsets.all(3),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(3),
+                    decoration: const BoxDecoration(
                       color: Colors.red,
                       shape: BoxShape.circle,
                     ),
-                    child: Text(
+                    child: const Text(
                       '1', // This is the notification badge number
                       style: TextStyle(
                         fontSize: 10,
@@ -98,6 +99,7 @@ class ParentAppBarWidget extends StatelessWidget {
             ),
             onPressed: () {
               // Handle notification click
+              Navigator.pushNamed(context, '/PieChartSample2');
             },
           ),
         ],
