@@ -1,31 +1,68 @@
 # Front-end Tasks
     1- ✅ Splash Screen
-        ❗️but there a delay before the splash screen appears
-    2- Onboarding and Welcome Pages (3 screens)
+          ✅️ but there a delay before the splash screen appears
+    2- ✅ Onboarding and Welcome Pages (3 screens)
     3- ✅ Login Screen
     4- ✅ Signup Screen
-    5- Dashboard Screen for Parents
-    6- Home Screen for Child
-    7- Profile Screen for Parents
-    8- Activity/Game Screen for Child
-    9- Assessment Screen
-    10- Progress Tracking Screen for Child
-    11- Subscription Screen
-    12- Settings Screen for Parents
-    13- Payment Integration
-    14- Push Notification Setup
-    15- Authentication with BLoC
-    16- Parent-Child Account Linking
-    17- Activity Report Generation for Parents
-    18- Feedback Screen for Parents
-    19- Help & Support Screen
-    20- Logout Functionality
-    21- Multilingual Support (English/Arabic)
-    22- Integrate AI Suggestions for Child Learning
-    23- User Role Management (Parent/Child)
-    24- Implement Real-time Data Sync
-    25- Testing and Bug Fixes
+    4- ✅ OTP Screen
+        # Parents
+            - ✅ Dashboard Screen for Parents
+            - ✅ Profile Screen for Parents
+            - Activity Screen
+                - Video
+                - Article
+                - Images
+        # Child
+            - ✅ Home Screen for Child
+            - Activity/Game Screen for Child
+    - Theme
+        - ✅ Colors
+        - Theme for app
+        - Fonts
+
+
+
+    - Assessment Screen
+    - Progress Tracking Screen for Child
+    - Subscription Screen
+    - ✅ Settings Screen for Parents
+    - Payment Integration
+    - Push Notification Setup
+    - Authentication with BLoC
+    - Parent-Child Account Linking
+    - Activity Report Generation for Parents
+    - Feedback Screen for Parents
+    - Help & Support Screen
+    - Logout Functionality
+    - Multilingual Support (English/Arabic)
+    - Integrate AI Suggestions for Child Learning
+    - User Role Management (Parent/Child)
+    - Implement Real-time Data Sync
+    - Testing and Bug Fixes
 
 
 # Backend and Service Integration Tasks
-    1- Supabase
+    1- ✅ Supabase
+    2- OneSignal
+    3- Moyasar
+
+Auth
+    1- ✅ Screen
+    2- Repo
+    3- Bloc
+    4- Update screens with bloc
+
+Content:
+    1- ✅ Articles based on recurses
+    2- ✅ 50% Videos
+    3- Images
+
+Routers:
+    Entry page First_Screen: will check
+        1- if the user is logged in or not
+        2- if the user is parent or child
+        3- if the user is parent, then it will navigate to the parent dashboard
+        4- if the user is child, then it will navigate to the child dashboard
+
+
+sign in

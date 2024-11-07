@@ -8,6 +8,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
   void initState() {
     super.initState();
     _navigateToHome();
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   // Function to navigate to Login after delay
   void _navigateToHome() async {
     // Duration of splash screen display
-    await Future.delayed(Duration(seconds: 5), () {});
+    await Future.delayed(const Duration(seconds: 5), () {});
 
     // Navigate to HomeScreen after delay
     Navigator.pushReplacementNamed(context, '/login');
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Stack(

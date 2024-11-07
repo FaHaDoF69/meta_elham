@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meta_elham_flutter/src/features/shared/widgets/custom_text_field.dart';
 
-import '../../shared/widgets/custom_button_widget.dart';
+import '../../../widgets/custom_button_widget.dart';
+import '../../../widgets/custom_text_field.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -56,7 +57,7 @@ class LoginScreen extends StatelessWidget {
           *
           * */
           SingleChildScrollView(
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -81,11 +82,11 @@ class LoginScreen extends StatelessWidget {
                   ),
 
                   // Spacing
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
 
                   // Email input field
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
                     // child: TextField(
                     //   decoration: InputDecoration(
                     //     prefixIcon: Icon(Icons.email),
@@ -103,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
 
                   /*
                   *
@@ -164,7 +165,7 @@ class LoginScreen extends StatelessWidget {
                   ),
 
                   // Spacing
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Navigate to create new account screen
                   GestureDetector(
@@ -172,7 +173,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.pushNamed(
                           context, '/signup'); // Navigate to signup screen
                     },
-                    child: Text(
+                    child: const Text(
                       "سجل حساب جديد",
                       style: TextStyle(color: Colors.blue),
                     ),
