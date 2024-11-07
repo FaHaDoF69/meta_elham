@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-import '../../shared/widgets/custom_button_widget.dart';
+import '../../../widgets/custom_button_widget.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Move the following code OtpTextField widget
-    Color accentPurpleColor = Color(0xFF6A53A1);
-    Color primaryColor = Color(0xFF121212);
-    Color accentPinkColor = Color(0xFFF99BBD);
-    Color accentDarkGreenColor = Color(0xFF115C49);
-    Color accentYellowColor = Color(0xFFFFB612);
-    Color accentOrangeColor = Color(0xFFEA7A3B);
+    // TODO Move the following color to theme
+    Color accentPurpleColor = const Color(0xFF6A53A1);
+    Color primaryColor = const Color(0xFF121212);
+    Color accentPinkColor = const Color(0xFFF99BBD);
+    Color accentDarkGreenColor = const Color(0xFF115C49);
+    Color accentYellowColor = const Color(0xFFFFB612);
+    Color accentOrangeColor = const Color(0xFFEA7A3B);
 
     TextStyle? createStyle(Color color) {
       ThemeData theme = Theme.of(context);
@@ -120,8 +120,7 @@ class OtpScreen extends StatelessWidget {
                   textColor: Colors.white,
                   onPressed: () {
                     // Navigate to otp screen
-                    Navigator.pushReplacementNamed(
-                        context, '/parent_dashboard');
+                    Navigator.pushReplacementNamed(context, '/parent_nav');
                   },
                 ),
 
